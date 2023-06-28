@@ -117,6 +117,41 @@ if score >= 0 and score < 60:
 
 * These if statements will only excute their lines of code if both of their questions are answered, yes
 
+## Short Circuting
+* Perhaps we want to do some division when we are asking our question
+```python
+x = int(input("What's x? "))
+
+if 5 / x == 1:
+  print("x is 5")
+```
+* While this program is silly, it demonstrates and issue. What if x is 0?
+  * The program will crash. We want to check that x is not 0 before we divide
+  ```python
+  x = int(input("What's x? "))
+
+  if x != 0:
+    if 5 / x == 1:
+      print("x is 5")
+  ```
+  * This works, but we can improve this program using `short circuting`
+    * The idea with `short circuting` is the python, and other programing languages only do exactly the amount of work they are required to
+    * So if we make a condition `x != 0 and 5 / x == 1`, python will not do `5 / x` if it sees that `x != 0` is `False` because no matter what, the whole conditional is False
+    ```python
+    x = int(input("What's x? "))
+
+    if x != 0 and 5 / x == 1:
+      print("x is 5")
+    ```
+    * This idea also works for or
+    ```python
+    x = int(input("What's x? "))
+
+    if x == 0 or 5 / x == 1:
+      print("x is 0 or 5")
+    ```
+      * This program will not error because if x is 0, python will not check if `5 / x` is 1
+
 
 ## Boolean
 
