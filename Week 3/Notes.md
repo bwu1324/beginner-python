@@ -186,6 +186,7 @@ Let's update our `cat.py` program to use this function
 def main():
   num_meows = get_positive_number()
   for _ in range(num_meows)
+    print("meow")
 
 def get_positive_number():
   while True:
@@ -242,7 +243,7 @@ Let's use a `dict`.
     "Hermione": "Gryffindor",
     "Harry": "Gryffindor",
     "Ron": "Gryffindor",
-    "Draco": "Slytherin
+    "Draco": "Slytherin"
   }
   ```
 * We access the values in a dictionary again using the square brackets `[]`
